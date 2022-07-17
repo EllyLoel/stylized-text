@@ -1,11 +1,27 @@
 {
   "name": "stylized-text",
-  "description": "Webcomponent stylized-text following open-wc recommendations",
+  "description": "A Web Component that makes stylised text more accessible",
   "license": "MIT",
-  "author": "stylized-text",
+  "author": "Elly Loel <hello@ellyloel.com> (http://ellyloel.com)",
+  "keywords": [
+    "web-components",
+    "lit-element",
+    "typescript",
+    "lit",
+    "a11y"
+  ],
   "version": "1.0.1",
+  "homepage": "https://github.com/ellyloel/stylized-text",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ellyloel/stylized-text.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ellyloel/stylized-text/issues"
+  },
   "main": "dist/src/index.js",
   "module": "dist/src/index.js",
+  "type": "module",
   "exports": {
     ".": "./dist/src/index.js",
     "./stylized-text.js": "./dist/src/stylized-text.js",
