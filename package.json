@@ -3,12 +3,13 @@
   "description": "Webcomponent stylized-text following open-wc recommendations",
   "license": "MIT",
   "author": "stylized-text",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "main": "dist/src/index.js",
   "module": "dist/src/index.js",
   "exports": {
     ".": "./dist/src/index.js",
-    "./stylized-text.js": "./dist/src/stylized-text.js"
+    "./stylized-text.js": "./dist/src/stylized-text.js",
+    "./stylized-text-react": "./dist/src/stylized-text-react.js"
   },
   "scripts": {
     "analyze": "cem analyze --litelement",
@@ -23,14 +24,14 @@
     "storybook:build": "tsc && npm run analyze -- --exclude dist && build-storybook"
   },
   "dependencies": {
-    "@spectrum-web-components/overlay": "^0.16.4",
-    "@spectrum-web-components/tooltip": "^0.10.15",
+    "@lit-labs/react": "^1.0.6",
     "lit": "^2.0.2"
   },
   "devDependencies": {
     "@custom-elements-manifest/analyzer": "^0.4.17",
     "@open-wc/eslint-config": "^4.3.0",
     "@open-wc/testing": "next",
+    "@types/react": "^18.0.15",
     "@typescript-eslint/eslint-plugin": "^4.33.0",
     "@typescript-eslint/parser": "^4.33.0",
     "@web/dev-server": "^0.1.28",
@@ -42,6 +43,8 @@
     "husky": "^4.3.8",
     "lint-staged": "^10.5.4",
     "prettier": "^2.4.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "tslib": "^2.3.1",
     "typescript": "^4.5.2"
   },
@@ -66,6 +69,14 @@
         "always",
         {
           "ignorePackages": true
+        }
+      ],
+      "import/no-extraneous-dependencies": [
+        "error",
+        {
+          "devDependencies": true,
+          "optionalDependencies": false,
+          "peerDependencies": false
         }
       ]
     }
