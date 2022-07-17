@@ -6,6 +6,8 @@ This webcomponent follows the [open-wc](https://github.com/open-wc/open-wc) reco
 
 ```bash
 yarn add stylized-text
+# or
+npm install stylized-text
 ```
 
 ## Usage
@@ -14,8 +16,8 @@ yarn add stylized-text
 <script type="module">
   import 'stylized-text/stylized-text.js';
 </script>
-
-<stylized-text></stylized-text>
+<!-- Make sure you switch out the label and stylized text for your own -->
+<stylized-text label="Elly">&lt;e//y&gt;</stylized-text>
 ```
 
 ## Linting and formatting
@@ -24,12 +26,16 @@ To scan the project for linting and formatting errors, run
 
 ```bash
 yarn lint
+# or
+npm run lint
 ```
 
 To automatically fix linting and formatting errors, run
 
 ```bash
 yarn format
+# or
+npm run format
 ```
 
 ## Testing with Web Test Runner
@@ -38,12 +44,16 @@ To execute a single test run:
 
 ```bash
 yarn test
+# or
+npm run test
 ```
 
 To run the tests in interactive watch mode run:
 
 ```bash
 yarn test:watch
+# or
+npm run test:watch
 ```
 
 ## Demoing with Storybook
@@ -52,12 +62,16 @@ To run a local instance of Storybook for your component, run
 
 ```bash
 yarn storybook
+# or
+npm run storybook
 ```
 
 To build a production version of Storybook, run
 
 ```bash
 yarn storybook:build
+# or
+npm run storybook:build
 ```
 
 ## Tooling configs
@@ -70,6 +84,8 @@ If you customize the configuration a lot, you can consider moving them to indivi
 
 ```bash
 yarn start
+# or
+npm run start
 ```
 
 To run a local development server that serves the basic demo located in `demo/index.html`
