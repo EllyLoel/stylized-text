@@ -20,6 +20,9 @@
     "url": "https://github.com/ellyloel/stylized-text/issues"
   },
   "main": "dist/src/index.js",
+  "files": [
+    "dist"
+  ],
   "module": "dist/src/index.js",
   "type": "module",
   "exports": {
