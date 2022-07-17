@@ -44,7 +44,7 @@
     "lit": "^2.0.2"
   },
   "devDependencies": {
-    "@custom-elements-manifest/analyzer": "^0.4.17",
+    "@custom-elements-manifest/analyzer": "^0.6.3",
     "@open-wc/eslint-config": "^4.3.0",
     "@open-wc/testing": "next",
     "@types/react": "^18.0.15",
