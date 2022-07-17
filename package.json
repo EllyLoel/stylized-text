@@ -3,7 +3,7 @@
   "description": "Webcomponent stylized-text following open-wc recommendations",
   "license": "MIT",
   "author": "stylized-text",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "dist/src/index.js",
   "module": "dist/src/index.js",
   "exports": {
