@@ -1,24 +1,62 @@
 import { html, css, LitElement } from 'lit';
 import { property } from 'lit/decorators.js';
-import '@spectrum-web-components/overlay/overlay-trigger.js';
-import '@spectrum-web-components/tooltip/sp-tooltip.js';
+import 'https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.0.0-beta.77/dist/components/tooltip/tooltip.js';
 
 export class StylizedText extends LitElement {
   static styles = css`
-    :host {
-      display: inline-block;
+    span {
+      display: var(--stylized-text-display, inline-block);
+      text-decoration: var(--stylized-text-underline, dotted underline);
+      text-decoration-color: var(
+        --stylized-text-underline-color,
+        hsl(0deg 0% 0% / 1)
+      );
+      transition-property: var(
+        --stylized-text-transition-property,
+        text-decoration
+      );
+      transition-duration: var(--stylized-text-transition-duration, 300ms);
+      transition-timing-function: var(
+        --stylized-text-transition-timing-function,
+        ease
+      );
+      transition-delay: var(--stylized-text-transition-delay, 0s);
     }
 
-    .visually-hidden {
-      border: 0;
-      clip: rect(0 0 0 0);
-      height: auto;
-      margin: 0;
-      overflow: hidden;
-      padding: 0;
-      position: absolute;
-      width: 1px;
-      white-space: nowrap;
+    span:is(:hover, :focus) {
+      text-decoration-color: var(
+        --stylized-text-hover-underline-color,
+        hsl(0deg 0% 0% / 0)
+      );
+      transition-property: var(
+        --stylized-text-hover-transition-property,
+        text-decoration
+      );
+      transition-duration: var(
+        --stylized-text-hover-transition-duration,
+        300ms
+      );
+      transition-timing-function: var(
+        --stylized-text-hover-transition-timing-function,
+        ease
+      );
+      transition-delay: var(--stylized-text-hover-transition-delay, 0s);
+    }
+
+    @media (prefers-color-scheme: dark) {
+      span {
+        text-decoration-color: var(
+          --stylized-text-underline-color,
+          hsl(0deg 0% 100% / 1)
+        );
+      }
+
+      span:is(:hover, :focus) {
+        text-decoration-color: var(
+          --stylized-text-hover-underline-color,
+          hsl(0deg 0% 100% / 0)
+        );
+      }
     }
   `;
 
@@ -26,17 +64,21 @@ export class StylizedText extends LitElement {
 
   render() {
     return html`
-      <overlay-trigger aria-hidden="true">
-        <span part="text" slot="trigger" tabindex="0">
-          <slot></slot>
+      <link
+        rel="stylesheet"
+        media="(prefers-color-scheme: light)"
+        href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.0.0-beta.77/dist/themes/light.css"
+      />
+      <link
+        rel="stylesheet"
+        media="(prefers-color-scheme: dark)"
+        href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.0.0-beta.77/dist/themes/dark.css"
+      />
+      <sl-tooltip part="tooltip" content="${this.label}" hoist="true">
+        <span part="text" aria-label="${this.label}">
+          <slot aria-hidden="true"></slot>
         </span>
-        <sp-tooltip
-          slot="hover-content"
-          style="--spectrum-tooltip-neutral-background-color: #eee; --spectrum-tooltip-neutral-padding-x: 0.5em; --spectrum-tooltip-neutral-padding-y: 0.5em; --spectrum-tooltip-neutral-border-radius: 0.125em;"
-          >${this.label}</sp-tooltip
-        >
-      </overlay-trigger>
-      <span role="text" class="visually-hidden">${this.label}</span>
+      </sl-tooltip>
     `;
   }
 }
