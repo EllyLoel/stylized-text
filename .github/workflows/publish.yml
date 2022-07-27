@@ -20,7 +20,7 @@ jobs:
       - name: 'Automated Version Bump'
         uses: phips28/gh-action-bump-version@v9.0.27
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
         with:
           commit-message: '🧹 chore: bumping version to {{version}}'
       - name: 'Install dependencies'
