@@ -11,9 +11,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: 'Checkout source code'
-      - uses: actions/checkout@v2
+        uses: actions/checkout@v2
       - name: 'Setup .npmrc file to publish to npm'
-      - uses: actions/setup-node@v3
+        uses: actions/setup-node@v3
         with:
           node-version: '16.x'
           registry-url: 'https://registry.npmjs.org'
@@ -24,10 +24,10 @@ jobs:
         with:
           commit-message: '🧹 chore: bumping version to {{version}}'
       - name: 'Install dependencies'
-      - run: yarn
+        run: yarn
       - name: 'Build package'
-      - run: yarn build
+        run: yarn build
       - name: 'Publish package'
-      - run: yarn publish
+        run: yarn publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
