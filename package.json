@@ -48,7 +48,7 @@
   },
   "devDependencies": {
     "@custom-elements-manifest/analyzer": "^0.4.17",
-    "@open-wc/eslint-config": "^4.3.0",
+    "@open-wc/eslint-config": "^8.0.2",
     "@open-wc/testing": "next",
     "@types/react": "^18.0.15",
     "@typescript-eslint/eslint-plugin": "^4.33.0",
