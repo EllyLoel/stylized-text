@@ -1,0 +1,29 @@
+name: Publish Package to npmjs
+on:
+  push:
+    branches:
+    - main
+  pull_request:
+    branches:
+    - main
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 'Checkout source code'
+        uses: actions/checkout@v2
+      - name: 'Setup .npmrc file to publish to npm'
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16.x'
+          registry-url: 'https://registry.npmjs.org'
+      - name: 'Automated Version Bump'
+        uses: phips28/gh-action-bump-version@v9.0.27
+        with:
+          commit-message: '🧹 chore: bumping version to {{version}}'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+      - run: yarn
+      - run: yarn publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
