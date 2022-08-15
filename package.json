@@ -10,7 +10,7 @@
     "lit",
     "a11y"
   ],
-  "version": "2.0.0",
+  "version": "3.0.0",
   "homepage": "https://github.com/ellyloel/stylized-text",
   "repository": {
     "type": "git",
@@ -60,9 +60,8 @@
     "concurrently": "^5.3.0",
     "eslint": "^7.32.0",
     "eslint-config-prettier": "^8.3.0",
-    "husky": "^4.3.8",
-    "lint-staged": "^13.0.3",
     "husky": "^8.0.1",
+    "lint-staged": "^13.0.3",
     "prettier": "^2.4.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
