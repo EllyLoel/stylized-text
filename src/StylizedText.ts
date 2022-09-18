@@ -85,8 +85,10 @@ export class StylizedText extends LitElement {
         href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.0.0-beta.77/dist/themes/dark.css"
       />
       <sl-tooltip part="tooltip" content="${this.label}">
-        <span part="text" class="text" aria-hidden="true" tabindex="0">
-          <slot></slot>
+        <span tabindex="0">
+          <span part="text" class="text" aria-hidden="true">
+            <slot></slot>
+          </span>
         </span>
       </sl-tooltip>
       <span class="visually-hidden">${this.label}</span>
